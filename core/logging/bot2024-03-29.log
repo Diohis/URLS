@@ -1,0 +1,211 @@
+2024-03-29 00:58:59,160 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 00:58:59,160 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 00:58:59,161 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 00:59:20,727 ERROR Cause exception while process update id=401813177 by bot id=6907852509
+ValidationError: 1 validation error for SendMessage
+text
+  Input should be a valid string [type=string_type, input_value=<generator object url_nam...> at 0x0000022D29A37580>, input_type=generator]
+    For further information visit https://errors.pydantic.dev/2.5/v/string_type
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 116, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 111, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 144, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 116, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 111, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 144, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 116, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 111, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 136, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\NIL-URL\core\handlers\url.py", line 46, in url_name
+    await message.answer(code)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\types\message.py", line 1725, in answer
+    return SendMessage(
+           ^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pydantic\main.py", line 164, in __init__
+    __pydantic_self__.__pydantic_validator__.validate_python(data, self_instance=__pydantic_self__)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for SendMessage
+text
+  Input should be a valid string [type=string_type, input_value=<generator object url_nam...> at 0x0000022D29A37580>, input_type=generator]
+    For further information visit https://errors.pydantic.dev/2.5/v/string_type
+2024-03-29 01:01:35,449 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 01:01:35,449 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 01:01:35,449 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 01:10:24,612 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 01:10:24,613 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 01:10:24,613 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 01:12:09,883 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 01:12:09,883 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 01:12:09,883 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 01:20:27,549 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 01:20:27,549 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 01:20:27,549 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 12:48:52,760 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 12:48:52,761 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 12:48:52,761 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 12:51:04,603 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 12:51:04,604 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 12:51:04,604 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 12:51:41,382 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 12:51:41,382 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 12:51:41,382 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 12:52:18,575 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 12:52:18,575 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 12:52:18,575 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 12:52:19,875 ERROR Cause exception while process update id=401813206 by bot id=6907852509
+TypeError: 'Singleton' object is not iterable
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 116, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 111, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 144, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 116, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 111, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 144, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 116, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 111, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\router.py", line 136, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\NIL-URL\core\handlers\url.py", line 25, in url_stats
+    for i in urls:
+TypeError: 'Singleton' object is not iterable
+2024-03-29 12:52:38,574 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 12:52:38,574 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 12:52:38,574 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 14:44:24,793 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 14:44:24,793 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 14:44:24,793 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 14:48:11,236 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 14:48:11,236 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 14:48:11,236 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 14:48:46,266 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 14:48:46,266 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 14:48:46,266 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 14:49:09,732 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 14:49:09,733 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 14:49:09,733 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 14:53:27,955 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 14:53:27,955 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 14:53:27,956 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 14:54:09,285 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 14:54:09,285 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 14:54:09,285 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 14:55:41,734 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 14:55:41,734 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 14:55:41,734 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 14:56:03,778 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 14:56:03,778 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 14:56:03,778 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 14:59:13,643 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 14:59:13,643 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 14:59:13,643 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 15:09:07,724 ERROR Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+2024-03-29 15:09:07,725 WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 6907852509)
+2024-03-29 15:12:34,807 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 15:12:34,807 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 15:12:34,807 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 15:13:41,304 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 15:13:41,304 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 15:13:41,304 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 15:15:34,703 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 15:15:34,703 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 15:15:34,703 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 15:16:01,049 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-03-29 15:16:01,049 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-03-29 15:16:01,049 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-03-29 15:16:06,801 ERROR Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2024-03-29 15:16:06,802 WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 6907852509)

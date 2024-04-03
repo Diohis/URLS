@@ -1,0 +1,872 @@
+2024-04-03 20:11:18,501 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:11:18,501 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:11:18,501 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:11:19,211 ERROR Cause exception while process update id=401813387 by bot id=6907852509
+ValueError: Could not interpret value `hours` for `x`. An entry with this name does not appear in `data`.
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\core\handlers\url.py", line 173, in url_create
+    figure = plot()
+             ^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\core\handlers\url.py", line 169, in plot
+    return sns.lineplot(x="hours", y="посещения", data=hrdf)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\relational.py", line 485, in lineplot
+    p = _LinePlotter(
+        ^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\relational.py", line 216, in __init__
+    super().__init__(data=data, variables=variables)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\_base.py", line 634, in __init__
+    self.assign_variables(data, variables)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\_base.py", line 679, in assign_variables
+    plot_data = PlotData(data, variables)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\_core\data.py", line 58, in __init__
+    frame, names, ids = self._assign_variables(data, variables)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\_core\data.py", line 232, in _assign_variables
+    raise ValueError(err)
+ValueError: Could not interpret value `hours` for `x`. An entry with this name does not appear in `data`.
+2024-04-03 20:12:02,805 ERROR Cause exception while process update id=401813388 by bot id=6907852509
+ValueError: Could not interpret value `hours` for `x`. An entry with this name does not appear in `data`.
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\core\handlers\url.py", line 173, in url_create
+    figure = plot()
+             ^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\core\handlers\url.py", line 169, in plot
+    return sns.lineplot(x="hours", y="посещения", data=hrdf)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\relational.py", line 485, in lineplot
+    p = _LinePlotter(
+        ^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\relational.py", line 216, in __init__
+    super().__init__(data=data, variables=variables)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\_base.py", line 634, in __init__
+    self.assign_variables(data, variables)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\_base.py", line 679, in assign_variables
+    plot_data = PlotData(data, variables)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\_core\data.py", line 58, in __init__
+    frame, names, ids = self._assign_variables(data, variables)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\seaborn\_core\data.py", line 232, in _assign_variables
+    raise ValueError(err)
+ValueError: Could not interpret value `hours` for `x`. An entry with this name does not appear in `data`.
+2024-04-03 20:12:50,297 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:12:50,297 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:12:50,297 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:12:57,521 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:12:57,521 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:12:57,521 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:20:08,126 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:20:08,126 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:20:08,126 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:22:37,572 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:22:37,572 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:22:37,572 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:23:35,481 ERROR Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+2024-04-03 20:23:35,481 WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 6907852509)
+2024-04-03 20:26:07,661 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:26:07,661 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:26:07,661 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:26:08,856 ERROR Cause exception while process update id=401813392 by bot id=6907852509
+TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 2] Can not write request body for https://api.telegram.org/bot6907852509:AAGbYYCfTlMzI62XD8pTHO36-12RfvpLtHs/editMessageMedia
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 626, in write_bytes
+    await self.body.write(writer)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\multipart.py", line 906, in write
+    await part.write(writer)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\payload.py", line 441, in write
+    chunk = await self._iter.__anext__()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\types\input_file.py", line 103, in read
+    async with aiofiles.open(self.path, "rb") as f:
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiofiles\base.py", line 98, in __aenter__
+    self._obj = await self._coro
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiofiles\threadpool\__init__.py", line 94, in _open
+    f = yield from loop.run_in_executor(executor, cb)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'core/grafics/Nzmdx'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 170, in make_request
+    async with session.post(
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientOSError: [Errno 2] Can not write request body for https://api.telegram.org/bot6907852509:AAGbYYCfTlMzI62XD8pTHO36-12RfvpLtHs/editMessageMedia
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\core\handlers\url.py", line 185, in url_create
+    await callback.message.edit_media(media=media,reply_markup=None)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\bot.py", line 492, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 2] Can not write request body for https://api.telegram.org/bot6907852509:AAGbYYCfTlMzI62XD8pTHO36-12RfvpLtHs/editMessageMedia
+2024-04-03 20:26:42,687 ERROR Cause exception while process update id=401813396 by bot id=6907852509
+TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 2] Can not write request body for https://api.telegram.org/bot6907852509:AAGbYYCfTlMzI62XD8pTHO36-12RfvpLtHs/editMessageMedia
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 626, in write_bytes
+    await self.body.write(writer)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\multipart.py", line 906, in write
+    await part.write(writer)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\payload.py", line 441, in write
+    chunk = await self._iter.__anext__()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\types\input_file.py", line 103, in read
+    async with aiofiles.open(self.path, "rb") as f:
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiofiles\base.py", line 98, in __aenter__
+    self._obj = await self._coro
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiofiles\threadpool\__init__.py", line 94, in _open
+    f = yield from loop.run_in_executor(executor, cb)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'core/grafics/Nzmdx'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 170, in make_request
+    async with session.post(
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientOSError: [Errno 2] Can not write request body for https://api.telegram.org/bot6907852509:AAGbYYCfTlMzI62XD8pTHO36-12RfvpLtHs/editMessageMedia
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\core\handlers\url.py", line 185, in url_create
+    await callback.message.edit_media(media=media,reply_markup=None)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\bot.py", line 492, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 2] Can not write request body for https://api.telegram.org/bot6907852509:AAGbYYCfTlMzI62XD8pTHO36-12RfvpLtHs/editMessageMedia
+2024-04-03 20:27:15,321 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:27:15,322 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:27:15,322 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:31:48,686 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:31:48,686 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:31:48,687 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:32:29,864 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:32:29,864 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:32:29,864 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:32:40,378 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:32:40,379 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:32:40,379 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:45:11,089 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:45:11,089 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:45:11,089 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:57:10,380 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:57:10,380 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:57:10,380 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 20:59:00,211 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 20:59:00,211 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 20:59:00,211 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 21:00:22,096 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 21:00:22,097 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 21:00:22,097 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 21:03:40,695 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 21:03:40,695 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 21:03:40,695 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 21:05:26,474 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 21:05:26,474 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 21:05:26,474 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 21:07:34,054 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 21:07:34,055 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 21:07:34,055 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 21:07:34,736 ERROR Cause exception while process update id=401813448 by bot id=6907852509
+AttributeError: 'Message' object has no attribute 'edit'
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\pydantic\main.py", line 753, in __getattr__
+    return pydantic_extra[item]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'edit'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\core\handlers\url.py", line 150, in url_create
+    await callback.message.edit(media=media,reply_markup=keyboard)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\pydantic\main.py", line 755, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+AttributeError: 'Message' object has no attribute 'edit'
+2024-04-03 21:07:52,610 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 21:07:52,610 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 21:07:52,610 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:20:05,241 ERROR Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2024-04-03 22:20:05,248 WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 6907852509)
+2024-04-03 22:26:02,322 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:26:02,322 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:26:02,323 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:26:35,414 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:26:35,414 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:26:35,414 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:31:25,727 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:31:25,728 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:31:25,728 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:31:27,149 ERROR Cause exception while process update id=401813460 by bot id=6907852509
+ValueError: not enough values to unpack (expected 3, got 2)
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\core\handlers\url.py", line 310, in show_anydata
+    for n,k,v in enumerate(browser.items()):
+        ^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+2024-04-03 22:31:53,664 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:31:53,664 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:31:53,664 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:31:54,324 ERROR Cause exception while process update id=401813461 by bot id=6907852509
+NameError: name 'key' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\core\handlers\url.py", line 317, in show_anydata
+    text += f"{symbol}<b>{key} -> {value}</b>"
+                          ^^^
+NameError: name 'key' is not defined
+2024-04-03 22:32:14,501 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:32:14,501 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:32:14,501 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:32:33,975 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:32:33,975 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:32:33,975 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:34:51,908 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:34:51,908 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:34:51,908 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:36:05,687 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:36:05,687 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:36:05,687 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:36:06,297 ERROR Cause exception while process update id=401813465 by bot id=6907852509
+TypeError: Message.answer() missing 1 required positional argument: 'text'
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\core\handlers\url.py", line 341, in show_anydata
+    await callback.message.answer()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Message.answer() missing 1 required positional argument: 'text'
+2024-04-03 22:36:22,737 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:36:22,737 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:36:22,737 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:37:35,748 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:37:35,748 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:37:35,748 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:38:43,393 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:38:43,394 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:38:43,394 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:42:02,731 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:42:02,731 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:42:02,732 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:54:35,030 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:54:35,030 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:54:35,030 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
+2024-04-03 22:54:51,177 ERROR Cause exception while process update id=401813505 by bot id=6907852509
+TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 2] Can not write request body for https://api.telegram.org/bot6907852509:AAGbYYCfTlMzI62XD8pTHO36-12RfvpLtHs/editMessageMedia
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 626, in write_bytes
+    await self.body.write(writer)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\multipart.py", line 906, in write
+    await part.write(writer)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\payload.py", line 441, in write
+    chunk = await self._iter.__anext__()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\types\input_file.py", line 103, in read
+    async with aiofiles.open(self.path, "rb") as f:
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiofiles\base.py", line 98, in __aenter__
+    self._obj = await self._coro
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiofiles\threadpool\__init__.py", line 94, in _open
+    f = yield from loop.run_in_executor(executor, cb)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'core/grafics/Nzmdx_day.jpg'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 170, in make_request
+    async with session.post(
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientOSError: [Errno 2] Can not write request body for https://api.telegram.org/bot6907852509:AAGbYYCfTlMzI62XD8pTHO36-12RfvpLtHs/editMessageMedia
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\core\handlers\url.py", line 197, in url_create
+    await callback.message.edit_media(media=media,reply_markup=backtourlmenu(callback_data.code))
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\bot.py", line 492, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dins\Desktop\Python\URLS\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 2] Can not write request body for https://api.telegram.org/bot6907852509:AAGbYYCfTlMzI62XD8pTHO36-12RfvpLtHs/editMessageMedia
+2024-04-03 22:55:40,395 WARNING Сообщения уровня WARNING, не критичны, но проблема может повторится
+2024-04-03 22:55:40,395 ERROR Сообщения уровня ERROR, программа не смогла выполнить какую-либо функцию
+2024-04-03 22:55:40,395 CRITICAL Сообщения уровня CRITICAL, серьезная ошибка нарушающая дальнейшую работу
