@@ -33,7 +33,7 @@ def create_statistics_buttons(urls:tuple|object)->InlineKeyboardMarkup:
     all_buttons = []
     buttons = []
     if "tuple" not in str(type(urls)):
-        buttons.append([InlineKeyboardButton(text=urls.name, callback_data=UrlStat(code=urls.code_url).pack())])
+        all_buttons.append([InlineKeyboardButton(text=urls.name, callback_data=UrlStat(code=urls.code_url).pack())])
     else:
         for i in urls:
             buttons.append(InlineKeyboardButton(text=i.name, callback_data=UrlStat(code=i.code_url).pack()))
