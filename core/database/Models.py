@@ -43,7 +43,6 @@ class Model(metaclass=Singleton):
             connection = await asyncpg.connect(user=config.USER, password=config.PASSWORD, host=config.HOST,
                                                port=config.PORT, database=config.DATABASE)
         except Exception as e:
-            print(e)
             print("[ERROR] - Не удалось подключиться к базе")
             return None
         query = []
@@ -112,16 +111,3 @@ class Model(metaclass=Singleton):
         finally:
             await connection.close()
     #Для скачивания csv файла. Передавать уникальный ключ (id или что-то такое)
-    async def download(self,**kwargs):
-        connection = await asyncpg.connect(user=config.USER, password=config.PASSWORD, host=config.HOST,
-                                           port=config.PORT, database=config.DATABASE)
-        query = []
-        un = ""
-        for key, value in kwargs.items():
-            un = value
-            query.append(f"{key} = '{value}'")
-        print()
-        result = await connection.copy_from_query(
-            f"SELECT * FROM redirects WHERE {' AND '.join(query)}",
-            output=f'{un}.csv', format='csv')
-        print(result)

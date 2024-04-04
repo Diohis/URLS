@@ -25,7 +25,7 @@ def cancel()->InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=button)
 def menu()->InlineKeyboardMarkup:
     button = [[
-        InlineKeyboardButton(text = "Отмена", callback_data="showmenu")
+        InlineKeyboardButton(text = "Меню", callback_data="showmenu")
     ]]
     return InlineKeyboardMarkup(inline_keyboard=button)
 
