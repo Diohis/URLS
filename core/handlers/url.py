@@ -48,6 +48,8 @@ class UrlState(StatesGroup):
 @router.callback_query(UrlKeyboard.filter(F.action == "stats"))
 async def url_stats(callback: types.CallbackQuery, callback_data: UrlKeyboard, bot: Bot):
     urls = await table_url.get(user_id=callback.from_user.id)
+    if urls==None:
+        await callback.answer("У вас еще нет сокращенных ссылок!")
     if callback.message.photo:
         await callback.message.delete()
         await callback.message.answer(text="Выберите нужную вам ссылку для просмотра статистики",
