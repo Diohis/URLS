@@ -21,6 +21,7 @@ class Settings:
     db_host: str
     db_port: str
     db_name: str
+    url_server:str
 
 def get_settings(path: str):
     evn = Env()
@@ -35,8 +36,8 @@ def get_settings(path: str):
         db_password=evn.str("DB_PASSWORD"),
         db_host=evn.str("DB_HOST"),
         db_port=evn.str("DB_PORT"),
-        db_name=evn.str("DB_NAME")
-
+        db_name=evn.str("DB_NAME"),
+        url_server = evn.str("URL_SERVER")
     )
 
 settings = get_settings('config')
