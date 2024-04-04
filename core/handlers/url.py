@@ -135,8 +135,12 @@ async def url_create(callback: types.CallbackQuery, callback_data: UrlKeyboard, 
     days = monthrange(current_year, month)[1]
 
     if "tuple" not in str(type(k)):
+
         visits = 1
         visits_day = 1
+        if k==None:
+            visits = 0
+            visits_day = 0
     else:
         visits = len(k)
         for i in k:
@@ -285,11 +289,13 @@ async def url_create(callback: types.CallbackQuery, callback_data: UrlKeyboard, 
 @router.callback_query(AnyData.filter())
 async def show_anydata(callback:CallbackQuery, callback_data:AnyData):
     statistics = await table_redirects.get(code_url=callback_data.code)
+    print(statistics)
     browser = {}
     os = {}
     device ={}
     if statistics==None:
         await callback.answer("На данный момент нет статистики")
+        return
     if "tuple" not in str(type(statistics)):
         pass
     else:
