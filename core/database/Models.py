@@ -89,7 +89,7 @@ class Model(metaclass=Singleton):
             print("[ERROR] - Не удалось подключиться к базе")
             return
         try:
-            await connection.execute(f"DELETE FROM {self.table} WHERE id = {record.__dict__["id"]} ;")
+            await connection.execute(f"DELETE FROM {self.table} WHERE id = {record.__dict__['id']} ;")
         except AttributeError:
             print("[WARNING] AttributeError - Возможно записи не существует")
         except Exception as e:
@@ -106,7 +106,7 @@ class Model(metaclass=Singleton):
             print("[ERROR] - Не удалось подключиться к базе")
             return
         try:
-            await connection.execute(f"INSERT INTO {self.table} ({", ".join(list(record.keys()))}) VALUES {tuple(record.values())} ;")
+            await connection.execute(f"INSERT INTO {self.table} ({', '.join(list(record.keys()))}) VALUES {tuple(record.values())} ;")
         except Exception as e:
             print(f"[WARNING] Exception - {e}")
         finally:
