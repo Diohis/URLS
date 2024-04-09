@@ -29,7 +29,7 @@ def menu()->InlineKeyboardMarkup:
     ]]
     return InlineKeyboardMarkup(inline_keyboard=button)
 
-def create_statistics_buttons(urls:tuple|object)->InlineKeyboardMarkup:
+def create_statistics_buttons(urls)->InlineKeyboardMarkup:
     all_buttons = []
     buttons = []
     if "tuple" not in str(type(urls)):
