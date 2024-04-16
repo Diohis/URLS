@@ -51,6 +51,7 @@ async def url_stats(callback: types.CallbackQuery, callback_data: UrlKeyboard, b
     urls = await table_url.get(user_id=callback.from_user.id)
     if urls==None:
         await callback.answer("У вас еще нет сокращенных ссылок!")
+        return
     if callback.message.photo:
         await callback.message.delete()
         await callback.message.answer(text="Выберите нужную вам ссылку для просмотра статистики",
