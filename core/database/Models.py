@@ -137,7 +137,7 @@ class Model():
         for key, value in kwargs.items():
             query.append(f"{key} = '{value}'")
         where +=" "+' AND '.join(query)
-        params = await self.connection.get(f"SELECT {data} FROM {self.table} {where};")
+        params = await self.connection.get(f'SELECT {data} FROM {self.table} {where};')
         if len(params)>1:
             return tuple(Record(**value) for value in params)
         elif len(params)==1:
@@ -161,7 +161,7 @@ class Model():
 
     async def remove(self, record: Record):
         try:
-            await self.connection.remove(f"DELETE FROM {self.table} WHERE id = {record.__dict__["id"]} ;")
+            await self.connection.remove(f"DELETE FROM {self.table} WHERE id = {record.__dict__['id']} ;")
         except AttributeError:
             print("[WARNING] AttributeError - Возможно записи не существует")
         except Exception as e:
