@@ -170,6 +170,7 @@ class Model():
     async def create(self, record:dict):
         try:
             print(f"INSERT INTO {self.table} ({", ".join(list(record.keys()))}) VALUES {tuple(record.values())} ;")
-            await self.connection.create(f'INSERT INTO {self.table} ({", ".join(list(record.keys()))}) VALUES {tuple(record.values())} ;')
+            value = f"({', '.join(list(record.keys()))})"
+            await self.connection.create(f'INSERT INTO {self.table} {value} VALUES {tuple(record.values())} ;')
         except Exception as e:
             print(f"[WARNING] Exception - {e}")
