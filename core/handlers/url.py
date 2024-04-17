@@ -370,12 +370,13 @@ async def show_google(callback: types.CallbackQuery):
         n_url = 0
         n_redirect = 0
         url = await table_url.get(user_id = i.user_id)
-        n_url = len(url)
-        if (n_url):
-            for j in url:
-                k_url = await table_redirects.get(code_url = j.code_url)
-                if(k_url):
-                    n_redirect += len(k_url)
+        if url:
+            n_url = len(url)
+            if (n_url):
+                for j in url:
+                    k_url = await table_redirects.get(code_url = j.code_url)
+                    if(k_url):
+                        n_redirect += len(k_url)
 
         user.append(n_url)
         user.append(n_redirect)
