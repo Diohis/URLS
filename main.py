@@ -11,8 +11,8 @@ from core.settings import home
 from core.handlers.basic import *
 from core.handlers import main_router
 
-if not os.path.exists(f'{home}/logging'):
-    os.makedirs(f'{home}/logging')
+#if not os.path.exists(f'{home}/logging'):
+#    os.makedirs(f'{home}/logging')
 
 # Для отладки локально разкоментить
 # logging.basicConfig(level=logging.INFO)
