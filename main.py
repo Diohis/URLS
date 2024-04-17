@@ -21,7 +21,7 @@ from core.handlers import main_router
 # #Для отладки локально закоментить
 logger = logging.getLogger()
 logger.setLevel(logging.WARNING)
-handler = logging.FileHandler(f"{home}/logging/bot{dt.date.today()}.log", "a+", encoding="utf-8")
+handler = logging.FileHandler(f'{home}/logging/bot{dt.date.today()}.log', "a+", encoding="utf-8")
 handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
 logger.addHandler(handler)
 
