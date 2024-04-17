@@ -123,7 +123,7 @@ class ConnectSQLite3(metaclass=Singleton):
         except Exception as e:
             print(f"[WARNING] Exception - {e}")
 class Model():
-    def __init__(self,connection: ConnectPostgreSQL|ConnectSQLite3):
+    def __init__(self,connection):
         self.table = self.__class__.__name__
         self.connection = connection
     async def get(self, *args,**kwargs):
