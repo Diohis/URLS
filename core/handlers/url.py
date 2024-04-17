@@ -13,7 +13,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message, FSInputFile, InputMediaPhoto, InputMedia
 from aiogram.fsm.state import StatesGroup, State
 
-from core.settings import settings
+from core.settings import settings,worksheet_urls
 from core.database.Table import *
 from core.keyboards.inline import *
 from core.filters.Filters import URLFilter
@@ -118,11 +118,14 @@ async def url_url_incorrectly(message: Message, state: FSMContext):
 @router.callback_query(F.data == "showmenu")
 async def show_menu(callback: CallbackQuery, state: FSMContext, bot: Bot):
     await state.clear()
+    is_admin = False
+    if settings.bots.admin_id == callback.from_user.id:
+        is_admin = True
     if callback.message.photo:
         await callback.message.delete()
-        await callback.message.answer(get_text_start_mess(), reply_markup=create_start_buttons())
+        await callback.message.answer(get_text_start_mess(), reply_markup=create_start_buttons(is_admin))
     else:
-        await callback.message.edit_text(get_text_start_mess(), reply_markup=create_start_buttons())
+        await callback.message.edit_text(get_text_start_mess(), reply_markup=create_start_buttons(is_admin))
 
 
 @router.callback_query(UrlStat.filter())
@@ -354,3 +357,30 @@ async def show_anydata(callback:CallbackQuery, callback_data:AnyData):
         text += f"{symbol} <b>{key} -> {value}</b>{end}"
         n += 1
     await callback.message.edit_caption(caption=text,reply_markup=backtourlmenu(callback_data.code))
+
+@router.callback_query(F.data == "load_google")
+async def show_google(callback: types.CallbackQuery):
+    records= await table_user.get("user_id","username")
+    msg = await callback.message.answer("Подождите, сейчас бот выгрузит информацию")
+    worksheet_urls.clear()
+    worksheet_urls.insert_row(["user_id","username","Количество ссылок","Количество переходов"],1)
+    users = []
+    for i in records:
+        user = [i.user_id,i.username]
+        n_url = 0
+        n_redirect = 0
+        url = await table_url.get(user_id = i.user_id)
+        n_url = len(url)
+        if (n_url):
+            for j in url:
+                k_url = await table_redirects.get(code_url = j.code_url)
+                if(k_url):
+                    n_redirect += len(k_url)
+
+        user.append(n_url)
+        user.append(n_redirect)
+        users.append(user)
+    for k,i in enumerate(users):
+        worksheet_urls.insert_row(i,index=k+2)
+    await msg.edit_text(text="Выгрузка информации завершена!\n Таблица пользователей: https://docs.google.com/spreadsheets/d/1w1dXO2JqLDe23Tn6EFNE8laYATsgT59_oD4VZ4T2CAA")
+    await callback.answer()

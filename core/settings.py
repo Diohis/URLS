@@ -3,7 +3,8 @@
 import os
 from environs import Env
 from dataclasses import dataclass
-
+import gspread
+from google.oauth2.service_account import Credentials
 # Путь от корня системы до папки core например:
 # D:\Programing\Flow_Work\core
 home = os.path.dirname(__file__)
@@ -41,4 +42,8 @@ def get_settings(path: str):
     )
 
 settings = get_settings('config')
-
+scope = ['https://www.googleapis.com/auth/spreadsheets']
+credentials = Credentials.from_service_account_file(f'{home}/cred.json')
+client = gspread.authorize(credentials.with_scopes(scope))
+sheet = client.open_by_url('https://docs.google.com/spreadsheets/d/1w1dXO2JqLDe23Tn6EFNE8laYATsgT59_oD4VZ4T2CAA/edit#gid=0')
+worksheet_urls = sheet.worksheet('urls')

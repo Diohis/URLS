@@ -11,11 +11,13 @@ class VisitsStat(CallbackData, prefix="visits"):
 class AnyData(CallbackData, prefix="anydata"):
     code:str
 
-def create_start_buttons() -> InlineKeyboardMarkup:
+def create_start_buttons(is_admin: bool) -> InlineKeyboardMarkup:
     buttons = [
         [InlineKeyboardButton(text="Статистика", callback_data=UrlKeyboard(action="stats").pack()),
          InlineKeyboardButton(text="Сократить ссылку",callback_data=UrlKeyboard(action="create").pack())]
     ]
+    if is_admin:
+        buttons.append([InlineKeyboardButton(text="Выгрузка пользователей", callback_data="load_google")])
     return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 def cancel()->InlineKeyboardMarkup:

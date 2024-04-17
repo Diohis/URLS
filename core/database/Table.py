@@ -1,5 +1,5 @@
-from core.database.Models import Model
-
+from core.database.Models import Model,ConnectPostgreSQL
+from core.database import config
 #===============Здесь создавать классы===============#
 # Пример:
 class Test(Model): # Название должно быть один в один с названием таблицы в базе. В наследниках обязательно Model
@@ -15,7 +15,8 @@ class redirects(Model):
     pass
 
 #===============Здесь создаем экземпляр класса для дальшейней работы с конкретной таблицей===============#
-table_user = users()
-table_url = urls()
-table_redirects = redirects()
+connect = ConnectPostgreSQL(config.USER,config.PASSWORD,config.HOST,config.PORT,config.DATABASE)
+table_user = users(connect)
+table_url = urls(connect)
+table_redirects = redirects(connect)
 #===============После создания данных экземпляров - импортируем эти переменные в модули, где нужна работа с соответствующей таблицей===============#
