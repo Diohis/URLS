@@ -138,15 +138,7 @@ async def url_create(callback: types.CallbackQuery, callback_data: UrlKeyboard, 
     current_year = datetime.datetime.now().year
     month = int(datetime.date.today().month)  # int(input())
     days = monthrange(current_year, month)[1]
-
-    if "tuple" not in str(type(k)):
-
-        visits = 1
-        visits_day = 1
-        if k==None:
-            visits = 0
-            visits_day = 0
-    else:
+    if k!=None:
         visits = len(k)
         for i in k:
             if i.time.date() == datetime.datetime.now().date():
@@ -176,11 +168,8 @@ async def url_create(callback: types.CallbackQuery, callback_data: UrlKeyboard, 
     current_year = datetime.datetime.now().year
     month = int(datetime.date.today().month)  # int(input())
     days = monthrange(current_year, month)[1]
-    if "tuple" not in str(type(statistics)):
-        y_day[statistics.time.hour - 1] += 1
-    else:
-        for i in statistics:
-            y_day[i.time.hour - 1] += 1
+    for i in statistics:
+        y_day[i.time.hour - 1] += 1
     if sum(y_day) == 0:
         await callback.answer("На данный момент нет статистики")
     all = dict(посещения=y_day, часы=x_day)
@@ -218,12 +207,8 @@ async def url_create(callback: types.CallbackQuery, callback_data: UrlKeyboard, 
     days = monthrange(current_year, month)[1]
     x_month = [i for i in range(1, days + 1)]
     y_month = [i * 0 for i in range(1, days + 1)]
-
-    if "tuple" not in str(type(statistics)):
-        y_month[statistics.time.day - 1] += 1
-    else:
-        for i in statistics:
-            y_month[i.time.day - 1] += 1
+    for i in statistics:
+        y_month[i.time.day - 1] += 1
     if sum(y_month) == 0:
         await callback.answer("На данный момент нет статистики")
     all = dict(посещения=y_month, часы=x_month)
@@ -259,12 +244,8 @@ async def url_create(callback: types.CallbackQuery, callback_data: UrlKeyboard, 
         await callback.answer("На данный момент нет статистики")
     x_year = [i for i in range(1, 13)]
     y_year = [i * 0 for i in range(1, 13)]
-
-    if "tuple" not in str(type(statistics)):
-        y_year[statistics.time.month - 1] += 1
-    else:
-        for i in statistics:
-            y_year[i.time.month - 1] += 1
+    for i in statistics:
+        y_year[i.time.month - 1] += 1
     if sum(y_year) == 0:
         await callback.answer("На данный момент нет статистики")
     all = dict(посещения=y_year, часы=x_year)
@@ -300,22 +281,19 @@ async def show_anydata(callback:CallbackQuery, callback_data:AnyData):
     if statistics==None:
         await callback.answer("На данный момент нет статистики")
         return
-    if "tuple" not in str(type(statistics)):
-        pass
-    else:
-        for i in statistics:
-            if i.browser not in browser:
-                browser[i.browser] =1
-            else:
-                browser[i.browser] += 1
-            if i.os not in os:
-                os[i.os] =1
-            else:
-                os[i.os] += 1
-            if i.device not in device:
-                device[i.device] =1
-            else:
-                device[i.device] += 1
+    for i in statistics:
+        if i.browser not in browser:
+            browser[i.browser] =1
+        else:
+            browser[i.browser] += 1
+        if i.os not in os:
+            os[i.os] =1
+        else:
+            os[i.os] += 1
+        if i.device not in device:
+            device[i.device] =1
+        else:
+            device[i.device] += 1
 
     text = f"Статистика по ссылке с кодом {callback_data.code}\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n"
     text+="╭🌐 <b>Браузеры:</b>\n"

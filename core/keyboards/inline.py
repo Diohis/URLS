@@ -34,14 +34,11 @@ def menu()->InlineKeyboardMarkup:
 def create_statistics_buttons(urls)->InlineKeyboardMarkup:
     all_buttons = []
     buttons = []
-    if "tuple" not in str(type(urls)):
-        all_buttons.append([InlineKeyboardButton(text=urls.name, callback_data=UrlStat(code=urls.code_url).pack())])
-    else:
-        for i in urls:
-            buttons.append(InlineKeyboardButton(text=i.name, callback_data=UrlStat(code=i.code_url).pack()))
-            if len(buttons)==3:
-                all_buttons.append(buttons)
-                buttons=[]
+    for i in urls:
+        buttons.append(InlineKeyboardButton(text=i.name, callback_data=UrlStat(code=i.code_url).pack()))
+        if len(buttons)==3:
+            all_buttons.append(buttons)
+            buttons=[]
     all_buttons.append(buttons)
     all_buttons.append([InlineKeyboardButton(text="Назад", callback_data="showmenu")])
     return InlineKeyboardMarkup(inline_keyboard=all_buttons)
