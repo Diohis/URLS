@@ -100,7 +100,7 @@ async def url_url(message: Message, state: FSMContext, bot: Bot):
         "user_id": message.from_user.id
     }
     await table_url.create(new_url)
-    url = f"{settings.url_server}?code={code}"
+    url = f"{settings.url_server}{code}"
 
     img = qrcode.make(url)
     img.save(f"core/code/{code}.png")
@@ -132,7 +132,7 @@ async def show_menu(callback: CallbackQuery, state: FSMContext, bot: Bot):
 async def url_create(callback: types.CallbackQuery, callback_data: UrlKeyboard, state: FSMContext):
     k = await table_redirects.get(code_url=callback_data.code)
 
-    stat = f"Ссылка: {settings.url_server}?code={callback_data.code}\n"
+    stat = f"Ссылка: {settings.url_server}{callback_data.code}\n"
     visits = 0
     visits_day = 0
     current_year = datetime.datetime.now().year
@@ -202,7 +202,7 @@ async def url_create(callback: types.CallbackQuery, callback_data: UrlKeyboard, 
         fig = figure.get_figure()
         fig.savefig(f"core/grafics/{callback_data.code}_day.png")
     # plt.grid(which="major", color="k")
-    url = f"{settings.url_server}?code={callback_data.code}"
+    url = f"{settings.url_server}{callback_data.code}"
     text = f"График посещения ссылки\n➖➖➖➖➖➖➖➖➖➖➖➖➖\nДиапазон: 1 день\nСсылка: {url}"
     media = InputMediaPhoto(media=FSInputFile(f"core/grafics/{callback_data.code}_day.png"),caption=text)
     await callback.message.edit_media(media=media,reply_markup=backtourlmenu(callback_data.code))
@@ -246,7 +246,7 @@ async def url_create(callback: types.CallbackQuery, callback_data: UrlKeyboard, 
         fig = figure.get_figure()
         fig.savefig(f"core/grafics/{callback_data.code}_month.png")
     # plt.grid(which="major", color="k")
-    url = f"{settings.url_server}?code={callback_data.code}"
+    url = f"{settings.url_server}{callback_data.code}"
     text = f"График посещения ссылки\n➖➖➖➖➖➖➖➖➖➖➖➖➖\nДиапазон: 1 месяц\nСсылка: {url}"
     media = InputMediaPhoto(media=FSInputFile(f"core/grafics/{callback_data.code}_month.png"), caption=text)
     await callback.message.edit_media(media=media, reply_markup=backtourlmenu(callback_data.code))
@@ -286,7 +286,7 @@ async def url_create(callback: types.CallbackQuery, callback_data: UrlKeyboard, 
         fig = figure.get_figure()
         fig.savefig(f"core/grafics/{callback_data.code}_year.png")
     # plt.grid(which="major", color="k")
-    url = f"{settings.url_server}?code={callback_data.code}"
+    url = f"{settings.url_server}{callback_data.code}"
     text = f"График посещения ссылки\n➖➖➖➖➖➖➖➖➖➖➖➖➖\nДиапазон: 1 год\nСсылка: {url}"
     media = InputMediaPhoto(media=FSInputFile(f"core/grafics/{callback_data.code}_year.png"),caption=text)
     await callback.message.edit_media(media=media,reply_markup=backtourlmenu(callback_data.code))
