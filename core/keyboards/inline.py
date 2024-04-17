@@ -34,7 +34,6 @@ def menu()->InlineKeyboardMarkup:
 def create_statistics_buttons(urls)->InlineKeyboardMarkup:
     all_buttons = []
     buttons = []
-    print(urls)
     for i in urls:
         buttons.append(InlineKeyboardButton(text=i.name, callback_data=UrlStat(code=i.code_url).pack()))
         if len(buttons)==3:
