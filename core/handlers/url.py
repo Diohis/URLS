@@ -117,7 +117,8 @@ async def url_url_incorrectly(message: Message, state: FSMContext):
 
 @router.callback_query(F.data == "showmenu")
 async def show_menu(callback: CallbackQuery, state: FSMContext, bot: Bot):
-    await state.clear()
+    if state:
+        await state.clear()
     is_admin = False
     if settings.bots.admin_id == callback.from_user.id:
         is_admin = True
@@ -334,6 +335,23 @@ async def show_anydata(callback:CallbackQuery, callback_data:AnyData):
         text += f"{symbol} <b>{key} -> {value}</b>{end}"
         n += 1
     await callback.message.edit_caption(caption=text,reply_markup=backtourlmenu(callback_data.code))
+
+
+@router.callback_query(DeleteUrl.filter())
+async def url_delete(callback: types.CallbackQuery, callback_data: DeleteUrl, bot:Bot):
+    url = await table_url.get(code_url = callback_data.code)
+    await table_url.remove(url[0])
+    redirects = await table_redirects.get(code_url = callback_data.code)
+    if redirects:
+        for i in redirects:
+            await table_redirects.remove(i)
+    urls = await table_url.get(user_id = callback.from_user.id)
+    if urls:
+        await url_stats(callback,callback_data,bot)
+    else:
+        await show_menu(callback,None,bot)
+
+
 
 @router.callback_query(F.data == "load_google")
 async def show_google(callback: types.CallbackQuery):

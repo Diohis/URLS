@@ -11,6 +11,9 @@ class VisitsStat(CallbackData, prefix="visits"):
 class AnyData(CallbackData, prefix="anydata"):
     code:str
 
+class DeleteUrl(CallbackData, prefix="urldelete"):
+    code:str
+
 def create_start_buttons(is_admin: bool) -> InlineKeyboardMarkup:
     buttons = [
         [InlineKeyboardButton(text="Статистика", callback_data=UrlKeyboard(action="stats").pack()),
@@ -52,8 +55,12 @@ def stat_time_buttons(code:str)->InlineKeyboardMarkup:
     ])
     buttons.append([InlineKeyboardButton(text="Другие данные",callback_data=AnyData(code=code).pack())])
     buttons.append([
+        InlineKeyboardButton(text="Удалить", callback_data=DeleteUrl(code = code).pack())
+    ])
+    buttons.append([
         InlineKeyboardButton(text="Назад",callback_data=UrlKeyboard(action="stats").pack())
     ])
+
     return InlineKeyboardMarkup(inline_keyboard=buttons)
 def backtourlmenu(code:str)->InlineKeyboardMarkup:
     button =[[
