@@ -131,7 +131,6 @@ async def show_menu(callback: CallbackQuery, state: FSMContext, bot: Bot):
 @router.callback_query(UrlStat.filter())
 async def url_create(callback: types.CallbackQuery, callback_data: UrlKeyboard, state: FSMContext):
     k = await table_redirects.get(code_url=callback_data.code)
-
     stat = f"Ссылка: {settings.url_server}{callback_data.code}\n"
     visits = 0
     visits_day = 0
