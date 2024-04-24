@@ -75,7 +75,7 @@ async def url_name(message: Message, state: FSMContext, bot: Bot):
     data = await state.get_data()
     await bot.edit_message_reply_markup(chat_id=message.chat.id, message_id=data["last_message_id"], reply_markup=None)
     await state.update_data(name=message.text)
-    mess = await message.answer("Теперь отпавьте мне ссылку для сокращения.\nСсылка должна содержать <code>http://</code> или <code>https://</code>", reply_markup=cancel())
+    mess = await message.answer("Теперь отправьте мне ссылку для сокращения.\nСсылка должна содержать <code>http://</code> или <code>https://</code>", reply_markup=cancel())
     await state.update_data(last_message_id=mess.message_id)
     await state.set_state(UrlState.url)
 
